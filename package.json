@@ -1,0 +1,51 @@
+{
+  "name": "get-set",
+  "version": "0.0.0",
+  "description": "Nested getter setter",
+  "main": "lib",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "lemonde-jshintrc": "git://github.com/lemonde/jshintrc",
+    "load-grunt-tasks": "^0.6.0",
+    "mocha": "^1.21.3",
+    "grunt-glue-js": "0.0.4",
+    "grunt-contrib-uglify": "^0.5.1",
+    "mocha-lcov-reporter": "0.0.1",
+    "blanket": "^1.1.6",
+    "coveralls": "^2.11.1"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha --recursive",
+    "coverage": "NODE_ENV=test mocha --require blanket --reporter mocha-lcov-reporter --recursive | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lemonde/get-set.git"
+  },
+  "keywords": [
+    "object",
+    "getter",
+    "setter"
+  ],
+  "author": "SAL <alper@lemonde.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lemonde/get-set/issues"
+  },
+  "homepage": "https://github.com/lemonde/get-set",
+  "config": {
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": [
+        "node_modules",
+        "dist"
+      ]
+    }
+  }
+}
