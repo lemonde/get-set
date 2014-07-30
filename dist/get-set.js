@@ -76,5 +76,5 @@ function set(object, path, value) {
 function isObject(object) {
   return object === Object(object);
 }}};
-undefined = require('index.js');
+GetSet = require('lib/index.js');
 }());

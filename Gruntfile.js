@@ -23,7 +23,8 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js',
         options: {
           umd: true,
-          global: 'GetSet'
+          export: 'GetSet',
+          main: 'lib/index.js'
         }
       }
     },
@@ -45,4 +46,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.registerTask('build', ['jshint:dist', 'gluejs:dist', 'uglify']);
+  grunt.registerTask('default', ['build']);
 };
