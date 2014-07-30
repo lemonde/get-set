@@ -13,17 +13,22 @@ module.exports = get;
  *
  * @param {Object} object
  * @param {String} path
+ * @param {*=} value - default value
  * @return {*}
  */
 
-function get(object, path) {
-  if ('undefined' === typeof object) return object;
-
+function get(object, path, value) {
+  var parts = path.split('.');
   try {
-    var parts = (path || '').split('.');
-    return 1 === parts.length ? object[path] : get(object[parts[0]], parts.slice(1).join('.'));
-  } catch (err) {}
-}},
+    if (parts.length > 1)
+      return get(object[parts[0]], parts.slice(1).join('.'), value);
+
+    return (parts[0] in object) ? object[path] : value;
+  } catch (err) {
+    return value;
+  }
+}
+},
 "lib/index.js": function(module, exports, require){'use strict';
 
 /**
