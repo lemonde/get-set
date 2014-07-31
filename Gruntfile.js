@@ -3,6 +3,23 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    symlink: {
+      options: {
+        overwrite: true
+      },
+      dev: {
+        files: [
+          {
+            src: 'node_modules/lemonde-jshintrc/server.jshintrc',
+            dest: '.jshintrc'
+          },
+          {
+            src: 'node_modules/lemonde-jshintrc/test.jshintrc',
+            dest: 'test/.jshintrc'
+          }
+        ]
+      }
+    },
     jshint: {
       dist: {
         options: {
@@ -40,11 +57,11 @@ module.exports = function(grunt) {
     }
   });
 
-  require('load-grunt-tasks')(grunt);
-  grunt.loadTasks('./grunt/dev');
   grunt.loadNpmTasks('grunt-glue-js');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-symlink');
+  grunt.registerTask('dev:init', ['symlink:dev']);
   grunt.registerTask('build', ['jshint:dist', 'gluejs:dist', 'uglify']);
   grunt.registerTask('default', ['build']);
 };
