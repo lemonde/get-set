@@ -1,5 +1,5 @@
 {
-  "name": "get-set",
+  "name": "lemonde-get-set",
   "version": "0.0.4",
   "description": "Nested getter setter",
   "main": "lib",
