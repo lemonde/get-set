@@ -9,6 +9,11 @@
 [devdeps]: https://david-dm.org/lemonde/get-set/dev-status.svg?theme=shields.io
 [coverage]: https://img.shields.io/coveralls/lemonde/get-set.svg
 
+## DEPRECATED
+You should use [object-path](https://github.com/mariocasciaro/object-path) instead
+
+<hr/>
+
 Object nested getter and setter.
 
 ## Install
