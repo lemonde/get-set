@@ -19,8 +19,8 @@ Object nested getter and setter.
 ## Install
 
 ```
-npm install lemonde/get-set#release
-bower install lemonde/get-set#release
+npm install lemonde-get-set#release
+bower install lemonde-get-set#release
 ```
 
 ## Usage
